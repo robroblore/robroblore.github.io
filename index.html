@@ -292,6 +292,113 @@
             .item h3 { font-size: 12px !important; }
             .item p { font-size: 10px !important; }
         }
+
+        /* --- CTF Section Styling --- */
+        .ctf-section {
+            background: color-mix(in srgb, var(--chip) 50%, transparent);
+            border: 1px solid color-mix(in srgb, var(--accent) 25%, var(--border));
+            border-radius: 14px;
+            padding: 14px;
+            margin-top: 12px;
+        }
+
+        .ctf-meta {
+            margin-top: -14px;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .ctf-meta .highlight {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .ctf-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
+
+        .ctf-card {
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 10px 12px;
+            transition: border-color 0.2s ease, background 0.2s ease;
+        }
+
+        .ctf-card:hover {
+            border-color: color-mix(in srgb, var(--accent) 30%, var(--border));
+            background: color-mix(in srgb, var(--chip) 80%, transparent);
+        }
+
+        .badge {
+            background: var(--accent);
+            color: #fff;
+            font-size: 0.8rem;
+            padding: 2px 8px;
+            border-radius: 999px;
+            margin-left: 6px;
+            font-weight: 500;
+        }
+
+        .badge.upcoming {
+            background: color-mix(in srgb, var(--accent) 30%, var(--muted));
+        }
+
+        .ctf-card.upcoming {
+            opacity: 0.9;
+        }
+
+        /* Responsive tweaks */
+        @media (min-width: 600px) {
+            .ctf-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* Adjust spacing above/below Selected Projects */
+        #projects {
+            margin-top: 26px; /* more space above */
+            margin-bottom: 6px; /* slightly less below */
+        }
+
+        /* More breathing room between CTF and Contact */
+        .ctf-section {
+            margin-bottom: 18px;
+        }
+
+        .quote {
+            margin-top: 22px;
+            font-style: italic;
+            font-size: 0.92em;
+            color: #aaa;
+            border-top: 1px solid #333;
+            padding-top: 12px;
+            text-align: center;
+        }
+        .quote .author {
+            color: #888;
+            font-style: normal;
+        }
+
+        .quote {
+            grid-column: 1 / -1; /* 🔥 makes it span across both columns */
+            margin-top: 1px;
+            font-style: italic;
+            font-size: 1em;
+            color: #aaa;
+            border-top: 1px solid #333;
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: center;
+        }
+        .quote .author {
+            color: #888;
+            font-style: normal;
+        }
+
+
     </style>
 </head>
 <body>
@@ -389,38 +496,15 @@
                     <p><a href="https://github.com/robroblore/KroundPlugins" target="_blank">GitHub Repository</a> multiple minecraft plugins with ranging utilities, from emotes and custom help messages to simulated banking and crypto. Everything integrates smoothly with a discord bot dedicated to the minecraft server using JDA. Features modular architecture and secure data handling.</p>
                 </li>
             </ul>
-
-            <h2>CTF Competitions</h2>
-            <ul class="reset">
-                <li class="item">
-                    <div class="when">Noob member of <strong>polygl0ts / Organi$ers</strong> team</div>
-                    <p>Participating in capture-the-flag competitions to develop practical security skills.</p>
-                </li>
-                <li class="item">
-                    <h3>Sunshine CTF</h3>
-                    <div class="when">2025</div>
-                </li>
-                <li class="item">
-                    <h3>hack.lu CTF</h3>
-                    <div class="when">2025</div>
-                </li>
-                <li class="item">
-                    <h3>BjörnCTF</h3>
-                    <div class="when">2025 · Upcoming</div>
-                </li>
-                <li class="item">
-                    <h3>Junction 2025: Utopia & Dystopia</h3>
-                    <div class="when">Upcoming</div>
-                </li>
-            </ul>
         </section>
+
 
         <section>
             <h2>Experience</h2>
             <ul class="reset">
                 <li class="item">
                     <h3>Independent Developer</h3>
-                    <div class="when">2017–Present · Geneva (Remote/On‑site)</div>
+                    <div class="when">2017–Present · Geneva (Remote/On-site)</div>
                     <p>Built and maintained plugins, bots, and utilities for personal and community use. Collaborated via Git, wrote docs, and supported users.</p>
                 </li>
             </ul>
@@ -439,9 +523,32 @@
                 </li>
             </ul>
 
-            <h2>Contact</h2>
+            <h2>CTF Competitions</h2>
+            <div class="ctf-section">
+                <div class="ctf-meta">
+                    <p><strong>Team:</strong> <span class="highlight">polygl0ts / Organi$ers</span></p>
+                    <p class="muted">Noob member participating in CTF competitions to grow cybersecurity skills.</p>
+                </div>
+                <div class="ctf-grid">
+                    <div class="ctf-card"><h3>Sunshine CTF <span class="badge">2025</span></h3></div>
+                    <div class="ctf-card"><h3>hack.lu CTF <span class="badge">2025</span></h3></div>
+                    <div class="ctf-card upcoming"><h3>BjörnCTF <span class="badge upcoming">Upcoming</span></h3></div>
+                    <div class="ctf-card upcoming"><h3>Junction 2025: Utopia & Dystopia <span class="badge upcoming">Upcoming</span></h3></div>
+                </div>
+            </div>
+
+            <h2 style="margin-top: 22px;">Contact</h2>
             <p>Available for internships or junior roles in software, game dev, or security. Preferably in Switzerland/EU or remote.</p>
         </section>
+
+        <!--One of the few handpicked things in this webpage and not AI generated lol -->
+        <section id="quote" class="quote center-footer">
+            <p>“The best proof of love is trust.” <span class="author">– Joyce Brothers</span></p>
+            <p>“Where is there dignity unless there is honesty?” <span class="author">– Cicero</span></p>
+        </section>
+
+
+
     </div>
 
     <footer>
