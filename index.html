@@ -64,7 +64,7 @@
             z-index: -1;
         }
 
-        .wrap { max-width: 980px; margin: 48px auto; padding: 0 px; }
+        .wrap { max-width: 980px; margin: 48px auto; padding: 0px; }
 
         header {
             display: grid;
@@ -299,7 +299,7 @@
     <header>
         <div>
             <h1 class="title">Horia Robert</h1>
-            <div class="handle">aka <strong>@robroblore</strong> — Geneva, Switzerland · 21 y/o</div>
+            <div class="handle">aka <strong>@robroblore</strong> — Geneva, Switzerland · <span id="age"></span> y/o</div>
             <p class="sub">Informatics student at EPFL (BA1, 2025) with the goal of pursuing a Master's in Cybersecurity. Passionate about <strong>game development</strong> and <strong>cybersecurity</strong>, building performant tools, tinkering with low‑level systems, and crafting playful experiences.</p>
             <br>
             <div class="actions">
@@ -389,6 +389,30 @@
                     <p><a href="https://github.com/robroblore/KroundPlugins" target="_blank">GitHub Repository</a> multiple minecraft plugins with ranging utilities, from emotes and custom help messages to simulated banking and crypto. Everything integrates smoothly with a discord bot dedicated to the minecraft server using JDA. Features modular architecture and secure data handling.</p>
                 </li>
             </ul>
+
+            <h2>CTF Competitions</h2>
+            <ul class="reset">
+                <li class="item">
+                    <div class="when">Noob member of <strong>polygl0ts / Organi$ers</strong> team</div>
+                    <p>Participating in capture-the-flag competitions to develop practical security skills.</p>
+                </li>
+                <li class="item">
+                    <h3>Sunshine CTF</h3>
+                    <div class="when">2025</div>
+                </li>
+                <li class="item">
+                    <h3>hack.lu CTF</h3>
+                    <div class="when">2025</div>
+                </li>
+                <li class="item">
+                    <h3>BjörnCTF</h3>
+                    <div class="when">2025 · Upcoming</div>
+                </li>
+                <li class="item">
+                    <h3>Junction 2025: Utopia & Dystopia</h3>
+                    <div class="when">Upcoming</div>
+                </li>
+            </ul>
         </section>
 
         <section>
@@ -431,6 +455,22 @@
     const printBtn = qs('#printBtn');
     const yearEl = qs('#year');
     const updEl = qs('#updated');
+    const ageEl = qs('#age');
+
+    // Calculate age based on birthdate (October 17, 2004)
+    const calculateAge = () => {
+        const today = new Date();
+        const birthDate = new Date(2004, 9, 17); // Month is 0-indexed (9 = October)
+        let age = today.getFullYear() - birthDate.getFullYear();
+        const monthDiff = today.getMonth() - birthDate.getMonth();
+
+        // Subtract 1 if birthday hasn't occurred yet this year
+        if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+            age--;
+        }
+
+        return age;
+    };
 
     const KEY = 'cv-theme';
     const setTheme = (mode) => {
@@ -447,6 +487,7 @@
 
     yearEl.textContent = new Date().getFullYear();
     updEl.textContent = new Date().toLocaleDateString(undefined, { year:'numeric', month:'short', day:'2-digit' });
+    ageEl.textContent = calculateAge();
 
     (function() {
         const saved = localStorage.getItem(KEY);
