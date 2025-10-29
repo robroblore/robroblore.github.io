@@ -405,7 +405,7 @@
         }
 
         .badge.onsite::after {
-            content: 'on site';
+            content: var(--tooltip-text, 'on site');
             position: absolute;
             bottom: 100%;
             left: 50%;
@@ -425,6 +425,12 @@
         .badge.onsite:hover::after {
             opacity: 1;
             transform: translateX(-50%) translateY(-8px);
+        }
+
+        /* Hide the emoji and text inside the badge, show in tooltip */
+        .badge.onsite::before,
+        .badge.online::before {
+            margin-right: 4px;
         }
 
         .quote {
@@ -591,8 +597,8 @@
                 <div class="ctf-grid">
                     <div class="ctf-card"><h3>Sunshine CTF <span class="badge">2025</span><span class="badge online">🌐</span></h3></div>
                     <div class="ctf-card"><h3>hack.lu CTF <span class="badge">2025</span><span class="badge online">🌐</span></h3></div>
-                    <div class="ctf-card upcoming"><h3>BjörnCTF <span class="badge upcoming">Upcoming</span><span class="badge onsite">📍</span></h3></div>
-                    <div class="ctf-card upcoming"><h3>Junction 2025: Utopia & Dystopia <span class="badge upcoming">Upcoming</span><span class="badge onsite">📍</span></h3></div>
+                    <div class="ctf-card upcoming"><h3>BjörnCTF <span class="badge upcoming">Upcoming</span><span class="badge onsite">📍 Zürich</span></h3></div>
+                    <div class="ctf-card upcoming"><h3>Junction 2025: Utopia & Dystopia <span class="badge upcoming">Upcoming</span><span class="badge onsite">📍 Helsinki</span></h3></div>
                 </div>
             </div>
 
@@ -637,6 +643,17 @@
 
         return age;
     };
+
+    document.querySelectorAll('.badge.onsite').forEach(badge => {
+        const text = badge.textContent.trim();
+        const location = text.replace('📍', '').trim();
+        if (location) {
+            badge.dataset.location = location;
+            badge.style.setProperty('--tooltip-text', `"on site - ${location}"`);
+            // Keep only the emoji visible in the badge
+            badge.textContent = '📍';
+        }
+    });
 
     const KEY = 'cv-theme';
     const setTheme = (mode) => {
