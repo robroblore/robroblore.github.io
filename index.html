@@ -3,7 +3,7 @@
     A simple, responsive, and print-friendly CV template.
     (Ngl, generated with AI lol)
     Feel free to use or modify for your own needs.
-    Last updated: 2026-03-12
+    Last updated: 2026-03-30
     License: MIT
 !-->
 <!DOCTYPE html>
@@ -433,6 +433,39 @@
             margin-right: 4px;
         }
 
+        .badge.bbb {
+            position: relative;
+            cursor: help;
+        }
+
+        .badge.bbb::after {
+            content: 'honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk honk';
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-4px);
+            background: var(--panel);
+            border: 1px solid var(--border);
+            padding: 6px 10px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            color: var(--text);
+            white-space: normal;
+            width: 200px;
+            text-align: center;
+            line-height: 1.4;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+            z-index: 10;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .badge.bbb:hover::after {
+            opacity: 1;
+            transform: translateX(-50%) translateY(-8px);
+        }
+
         .quote {
             margin-top: 22px;
             font-style: italic;
@@ -607,7 +640,7 @@
                     <div class="ctf-card"><h3>Junction 2025: Utopia & Dystopia<br> <span class="badge">2025</span><span class="badge onsite">📍 Helsinki</span></h3></div>
                     <div class="ctf-card"><h3>The Chaos Computer Club (CCC) 39th Edition<br> <span class="badge">2025</span><span class="badge onsite">📍 Hamburg</span></h3></div>
                     <div class="ctf-card"><h3>Insomnihack<br> <span class="badge">2026</span><span class="badge onsite">📍 Lausanne</span></h3></div>
-                    <div class="ctf-card"><h3><br> <span class="badge"></span><span class="badge"></span></h3></div>
+                    <div class="ctf-card"><h3>DEF CON Qualifiers<br> <span class="badge">2026</span><span class="badge online">🌐</span>  <br><span class="badge bbb">Honk Honk Honk</span></h3></div>
                 </div>
             </div>
 
@@ -615,7 +648,7 @@
             <p>Available for internships or junior roles in software, game dev, or security. Preferably in Switzerland/EU or remote.</p>
         </section>
 
-        <!--One of the few handpicked things in this webpage and not AI generated lol -->
+        <!--These aren't AI slop :> -->
         <section id="quote" class="quote center-footer">
             <p>“The best proof of love is trust.” <span class="author">– Joyce Brothers</span></p>
             <p>“Where is there dignity unless there is honesty?” <span class="author">– Cicero</span></p>
